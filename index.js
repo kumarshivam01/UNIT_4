@@ -1,29 +1,20 @@
+const express = require("express")
+const app = express()
+app.set('view engine','ejs');
+const Data = [
+                {books:"GameOfThrones"},
+                {books:"HarryPotter"},
+                {books:"avengers"}
+]
 
-//get method with route "" ( also called as home or root route) and return a string called hello
-const app = require("express")()
-
-const PORT = 8880;
-
-app.listen(PORT,()=>{
-    console.log((`Server running on ${PORT}`))
+app.get('/books',(req,res) =>{
+    res.send(Data)
 })
-app.get("/home",(req,res) => {
-    res.send("hello")
+
+app.get("/books/:name",(req,res)=>{
+    // res.sendFile(__dirname+'/book.js')
+    console.log(req.params.name)
+    res.render('view',{name:req.params.name})
 })
 
-//get method with route "/books" and return json of 4 books with any content
-
-const app = require("express")()
-// const { appendFile } = require("fs")
-const PORT = 8000;
-// console.log(express)
-app.listen(PORT,()=>{
-    console.log((`Server running on ${PORT}`))
-})
-app.get("/books",(req,res) => {
-    res.send({
-        hindi:"shivam",
-        english:"brajesh",
-        mathe:"rohit",
-    })
-})
+app.listen(9858);
