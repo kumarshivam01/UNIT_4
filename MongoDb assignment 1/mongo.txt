@@ -1,0 +1,193 @@
+Microsoft Windows [Version 10.0.19043.1526]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\hp>momgo
+'momgo' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\hp>mongo
+MongoDB shell version v5.0.6
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("66908ec2-784a-4749-906d-975975f93b05") }
+MongoDB server version: 5.0.6
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+---
+The server generated these startup warnings when booting:
+        2022-03-07T13:51:19.038+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> use assignments
+switched to db assignments
+> db.users.insertMany({"first_name":"shivam"},{"last_name":"kumar"},{"email":"shivam123@gmail.com"},{"gender":"male"},{"ip_address":"1234"},{"age":"24"})
+uncaught exception: TypeError: documents.map is not a function :
+DBCollection.prototype.insertMany@src/mongo/shell/crud_api.js:307:17
+@(shell):1:1
+> db.users.insertMany({"first_name":"shivam"},{"last_name":"kumar"},{"email":"shivam123@gmail.com"},{"gender":"male"},{"ip_address":"1234"},{"age":"24"})
+uncaught exception: TypeError: documents.map is not a function :
+DBCollection.prototype.insertMany@src/mongo/shell/crud_api.js:307:17
+@(shell):1:1
+> db.users.insertMany({"first_name":"shivam"},{"last_name":"kumar"},{"email":"shivam123@gmail.com"},{"gender":"male"},{"ip_address":"1234"},{"age":"24"})
+uncaught exception: TypeError: documents.map is not a function :
+DBCollection.prototype.insertMany@src/mongo/shell/crud_api.js:307:17
+@(shell):1:1
+> use assignment
+switched to db assignment
+> db
+assignment
+> db.createCollection(users)
+uncaught exception: ReferenceError: users is not defined :
+@(shell):1:1
+> db.createCollection("users")
+{ "ok" : 1 }
+> db.users.insertMany([{"first_name":"shivam"},{"last_name":"kumar"},{"email":"shivam@1234"},{"gender":"male"},{ip_address":"1234"},{"age":"24"}])
+undb.users.insertMany([{"first_name":"shivam"},{"last_name":"kumar"},{"email":"shivam@1234"},{"gender":"male"},{ip_address":"1234"},{"age":"24"}])
+uncaught exception: SyntaxError: missing : after property id :ingh"},{"email":"shivam@1234"},{"gender":"male"},{ip_address":"1234"},{"age":"24"}])
+@(shell):1:120ertMany([{"first_name":"shivam"},{"last_name":"kumar"},{"email":"shivam@1234"},{"gender":"male"},{ip_address":"1234"},{"age":"24"}])
+> db.users.find({})
+> db.users.insertMany([{"fisrst_name":"shivam"},{"last_name":"kumar"},{"email":"shivam@123"},{"gender":"male"},{"ip_adress":"123"},{"age":"24"}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("6227a38ad9e2086aea59cd82"),
+                ObjectId("6227a38ad9e2086aea59cd83"),
+                ObjectId("6227a38ad9e2086aea59cd84"),
+                ObjectId("6227a38ad9e2086aea59cd85"),
+                ObjectId("6227a38ad9e2086aea59cd86"),
+                ObjectId("6227a38ad9e2086aea59cd87")
+        ]
+}
+> db.users.find({}).pretty()
+{ "_id" : ObjectId("6227a38ad9e2086aea59cd82"), "fisrst_name" : "shivam" }
+{ "_id" : ObjectId("6227a38ad9e2086aea59cd83"), "last_name" : "kumar" }
+{ "_id" : ObjectId("6227a38ad9e2086aea59cd84"), "email" : "shivam@123" }
+{ "_id" : ObjectId("6227a38ad9e2086aea59cd85"), "gender" : "male" }
+{ "_id" : ObjectId("6227a38ad9e2086aea59cd86"), "ip_adress" : "123" }
+{ "_id" : ObjectId("6227a38ad9e2086aea59cd87"), "age" : "24" }
+> db.users.findOne({"last_name"})
+uncaught exception: SyntaxError: missing : after property id :
+@(shell):1:29
+> db.users.findOne({"last_name":"shivam"})
+null
+> db.users.find({"last_name":"shivam"})
+> db.users.findOne({"last_name":"kumar"})
+{ "_id" : ObjectId("6227a38ad9e2086aea59cd83"), "last_name" : "kumar" }
+> db.users({"fisrst_name":"shivam"},{$set{"profession":"student"}})
+uncaught exception: SyntaxError: missing : after property id :
+@(shell):1:39
+> db.users({"fisrst_name":"shivam"},{$set:{"profession":"student"}})
+uncaught exception: TypeError: db.users is not a function :
+@(shell):1:1
+> db.users.update({"fisrst_name":"shivam"},{$set:{"profession":"student"}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.users.find({}).pretty()
+{
+        "_id" : ObjectId("6227a38ad9e2086aea59cd82"),
+        "fisrst_name" : "shivam",
+        "profession" : "student"
+}
+{ "_id" : ObjectId("6227a38ad9e2086aea59cd83"), "last_name" : "kumar" }
+{ "_id" : ObjectId("6227a38ad9e2086aea59cd84"), "email" : "shivam@123" }
+{ "_id" : ObjectId("6227a38ad9e2086aea59cd85"), "gender" : "male" }
+{ "_id" : ObjectId("6227a38ad9e2086aea59cd86"), "ip_adress" : "123" }
+{ "_id" : ObjectId("6227a38ad9e2086aea59cd87"), "age" : "24" }
+> db.users.remove({"_id" : ObjectId("6227a38ad9e2086aea59cd83")})
+WriteResult({ "nRemoved" : 1 })
+> db.users.find({})
+{ "_id" : ObjectId("6227a38ad9e2086aea59cd82"), "fisrst_name" : "shivam", "profession" : "student" }
+{ "_id" : ObjectId("6227a38ad9e2086aea59cd84"), "email" : "shivam@123" }
+{ "_id" : ObjectId("6227a38ad9e2086aea59cd85"), "gender" : "male" }
+{ "_id" : ObjectId("6227a38ad9e2086aea59cd86"), "ip_adress" : "123" }
+{ "_id" : ObjectId("6227a38ad9e2086aea59cd87"), "age" : "24" }
+> db.users.remove({"fisrst_name" : "shivam"},{$set:{ "profession" : "student" }})
+WriteResult({ "nRemoved" : 1 })
+> db.users.find({})
+{ "_id" : ObjectId("6227a38ad9e2086aea59cd84"), "email" : "shivam@123" }
+{ "_id" : ObjectId("6227a38ad9e2086aea59cd85"), "gender" : "male" }
+{ "_id" : ObjectId("6227a38ad9e2086aea59cd86"), "ip_adress" : "123" }
+{ "_id" : ObjectId("6227a38ad9e2086aea59cd87"), "age" : "24" }
+> db.users.insert([{"fisrst_name" : "shivam"},{ "profession" : "student" }}])
+uncaught exception: SyntaxError: missing ] after element list :
+@(shell):1:72
+> db.users.insert([{"fisrst_name" : "shivam"},{ "profession" : "student" }])
+BulkWriteResult({
+        "writeErrors" : [ ],
+        "writeConcernErrors" : [ ],
+        "nInserted" : 2,
+        "nUpserted" : 0,
+        "nMatched" : 0,
+        "nModified" : 0,
+        "nRemoved" : 0,
+        "upserted" : [ ]
+})
+> db.users.find({})
+{ "_id" : ObjectId("6227a38ad9e2086aea59cd84"), "email" : "shivam@123" }
+{ "_id" : ObjectId("6227a38ad9e2086aea59cd85"), "gender" : "male" }
+{ "_id" : ObjectId("6227a38ad9e2086aea59cd86"), "ip_adress" : "123" }
+{ "_id" : ObjectId("6227a38ad9e2086aea59cd87"), "age" : "24" }
+{ "_id" : ObjectId("6227a995d9e2086aea59cd88"), "fisrst_name" : "shivam" }
+{ "_id" : ObjectId("6227a995d9e2086aea59cd89"), "profession" : "student" }
+> db.users.insert({"fisrst_name" : "shivam"})
+WriteResult({ "nInserted" : 1 })
+> db.users.find({})
+{ "_id" : ObjectId("6227a38ad9e2086aea59cd84"), "email" : "shivam@123" }
+{ "_id" : ObjectId("6227a38ad9e2086aea59cd85"), "gender" : "male" }
+{ "_id" : ObjectId("6227a38ad9e2086aea59cd86"), "ip_adress" : "123" }
+{ "_id" : ObjectId("6227a38ad9e2086aea59cd87"), "age" : "24" }
+{ "_id" : ObjectId("6227a995d9e2086aea59cd88"), "fisrst_name" : "shivam" }
+{ "_id" : ObjectId("6227a995d9e2086aea59cd89"), "profession" : "student" }
+{ "_id" : ObjectId("6227a9d9d9e2086aea59cd8a"), "fisrst_name" : "shivam" }
+>  db.users.update({"fisrst_name":"shivam"},{$set:{"profession":"student"}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.users.remove({"fisrst_name":"shivam",1})
+uncaught exception: SyntaxError: missing : after property id :
+@(shell):1:41
+> db.users.remove({"fisrst_name":"shivam"},1)
+WriteResult({ "nRemoved" : 1 })
+> db.users.find({}).pretty()
+{ "_id" : ObjectId("6227a38ad9e2086aea59cd84"), "email" : "shivam@123" }
+{ "_id" : ObjectId("6227a38ad9e2086aea59cd85"), "gender" : "male" }
+{ "_id" : ObjectId("6227a38ad9e2086aea59cd86"), "ip_adress" : "123" }
+{ "_id" : ObjectId("6227a38ad9e2086aea59cd87"), "age" : "24" }
+{ "_id" : ObjectId("6227a995d9e2086aea59cd89"), "profession" : "student" }
+{ "_id" : ObjectId("6227a9d9d9e2086aea59cd8a"), "fisrst_name" : "shivam" }
+> db.dropDatbase()
+uncaught exception: TypeError: db.dropDatbase is not a function :
+@(shell):1:1
+> db.dropDatbase("assignment")
+uncaught exception: TypeError: db.dropDatbase is not a function :
+@(shell):1:1
+> db.dropDatabase("assignment")
+Error: invalid parameter: expected an object (writeConcern) :
+runClientFunctionWithRetries@src/mongo/shell/session.js:371:27
+runCommand@src/mongo/shell/session.js:466:25
+DB.prototype._runCommandImpl@src/mongo/shell/db.js:166:12
+DB.prototype.runCommand@src/mongo/shell/db.js:181:16
+DB.prototype.dropDatabase@src/mongo/shell/db.js:415:12
+@(shell):1:1
+> db.dropDatabase()
+{ "ok" : 1 }
+> shows db
+uncaught exception: SyntaxError: unexpected token: identifier :
+@(shell):1:6
+> show dbs
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+test    0.000GB
+>
