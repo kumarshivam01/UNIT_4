@@ -1,0 +1,371 @@
+Microsoft Windows [Version 10.0.19043.1526]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\hp>mongo
+MongoDB shell version v5.0.6
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("cd498468-5261-4994-a6e3-d73c27a927e6") }
+MongoDB server version: 5.0.6
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+---
+The server generated these startup warnings when booting:
+        2022-03-07T13:51:19.038+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> use test
+switched to db test
+> db.Movie.find({"Movie_name":{$eq : "Screwed"}},{"Movie_name":1,"Production_year":1,"_id":0}).pretty()
+> db.Movie.find({})
+{ "_id" : ObjectId("6228dab6bc8339c5bf616f38"), "Movie_name" : "Pistol Opera (Pisutoru opera)", "movie_genre" : "Action|Crime|Drama", "Production_year" : "2002", "budget" : 18000 }
+{ "_id" : ObjectId("6228dab6bc8339c5bf616f39"), "Movie_name" : "Slumber Party Massacre, The", "movie_genre" : "Horror", "Production_year" : "2014", "budget" : 13000 }
+{ "_id" : ObjectId("6228dab6bc8339c5bf616f3a"), "Movie_name" : "Big Easy, The", "movie_genre" : "Action|Crime|Mystery|Romance|Thriller", "Production_year" : "2015", "budget" : 14000 }
+{ "_id" : ObjectId("6228dab6bc8339c5bf616f3b"), "Movie_name" : "Bachelorette", "movie_genre" : "Comedy", "Production_year" : "2003", "budget" : 20000 }
+{ "_id" : ObjectId("6228dab6bc8339c5bf616f3c"), "Movie_name" : "Partners: The Movie II (Aibô: Gekijô-ban II)", "movie_genre" : "Drama", "Production_year" : "2008", "budget" : 10000 }
+{ "_id" : ObjectId("6228dab6bc8339c5bf616f3d"), "Movie_name" : "Outrage", "movie_genre" : "Crime|Drama|Thriller", "Production_year" : "2003", "budget" : 11000 }
+{ "_id" : ObjectId("6228dab6bc8339c5bf616f3e"), "Movie_name" : "Cold Comes the Night", "movie_genre" : "Crime|Drama|Thriller", "Production_year" : "2006", "budget" : 13000 }
+{ "_id" : ObjectId("6228dab6bc8339c5bf616f3f"), "Movie_name" : "Four Stories of St. Julian ", "movie_genre" : "Crime|Thriller", "Production_year" : "1999", "budget" : 14000 }
+{ "_id" : ObjectId("6228dab6bc8339c5bf616f40"), "Movie_name" : "G.I. Joe: The Rise of Cobra", "movie_genre" : "Action|Adventure|Sci-Fi|Thriller", "Production_year" : "1991", "budget" : 12000 }
+{ "_id" : ObjectId("6228dab6bc8339c5bf616f41"), "Movie_name" : "Courier", "movie_genre" : "Comedy|Drama|Romance", "Production_year" : "2002", "budget" : 19000 }
+{ "_id" : ObjectId("6228dab6bc8339c5bf616f42"), "Movie_name" : "Talk to Me", "movie_genre" : "Drama", "Production_year" : "1992", "budget" : 18000 }
+{ "_id" : ObjectId("6228dab6bc8339c5bf616f43"), "Movie_name" : "Daar", "movie_genre" : "Drama|Horror|Mystery|Romance|Thriller", "Production_year" : "2012", "budget" : 14000 }
+{ "_id" : ObjectId("6228dab6bc8339c5bf616f44"), "Movie_name" : "Final Cut, The", "movie_genre" : "Sci-Fi|Thriller", "Production_year" : "2003", "budget" : 11000 }
+{ "_id" : ObjectId("6228dab6bc8339c5bf616f45"), "Movie_name" : "Sleepy Time Gal, The", "movie_genre" : "Drama", "Production_year" : "2006", "budget" : 14000 }
+{ "_id" : ObjectId("6228dab6bc8339c5bf616f46"), "Movie_name" : "This Is Elvis", "movie_genre" : "Documentary|Drama|Musical", "Production_year" : "2019", "budget" : 13000 }
+{ "_id" : ObjectId("6228dab6bc8339c5bf616f47"), "Movie_name" : "Harvest (Stadt Land Fluss)", "movie_genre" : "Drama|Romance", "Production_year" : "1995", "budget" : 16000 }
+{ "_id" : ObjectId("6228dab6bc8339c5bf616f48"), "Movie_name" : "High Road to China", "movie_genre" : "Adventure|Drama|Romance|War", "Production_year" : "2015", "budget" : 10000 }
+{ "_id" : ObjectId("6228dab6bc8339c5bf616f49"), "Movie_name" : "Match Point", "movie_genre" : "Crime|Drama|Romance", "Production_year" : "2009", "budget" : 18000 }
+{ "_id" : ObjectId("6228dab6bc8339c5bf616f4a"), "Movie_name" : "Larceny, Inc.", "movie_genre" : "Comedy|Crime|Drama", "Production_year" : "2005", "budget" : 13000 }
+{ "_id" : ObjectId("6228dab6bc8339c5bf616f4b"), "Movie_name" : "Little Italy", "movie_genre" : "Action|Comedy", "Production_year" : "2009", "budget" : 20000 }
+Type "it" for more
+> db.Movie.find({}).pretty()
+{
+        "_id" : ObjectId("6228dab6bc8339c5bf616f38"),
+        "Movie_name" : "Pistol Opera (Pisutoru opera)",
+        "movie_genre" : "Action|Crime|Drama",
+        "Production_year" : "2002",
+        "budget" : 18000
+}
+{
+        "_id" : ObjectId("6228dab6bc8339c5bf616f39"),
+        "Movie_name" : "Slumber Party Massacre, The",
+        "movie_genre" : "Horror",
+        "Production_year" : "2014",
+        "budget" : 13000
+}
+{
+        "_id" : ObjectId("6228dab6bc8339c5bf616f3a"),
+        "Movie_name" : "Big Easy, The",
+        "movie_genre" : "Action|Crime|Mystery|Romance|Thriller",
+        "Production_year" : "2015",
+        "budget" : 14000
+}
+{
+        "_id" : ObjectId("6228dab6bc8339c5bf616f3b"),
+        "Movie_name" : "Bachelorette",
+        "movie_genre" : "Comedy",
+        "Production_year" : "2003",
+        "budget" : 20000
+}
+{
+        "_id" : ObjectId("6228dab6bc8339c5bf616f3c"),
+        "Movie_name" : "Partners: The Movie II (Aibô: Gekijô-ban II)",
+        "movie_genre" : "Drama",
+        "Production_year" : "2008",
+        "budget" : 10000
+}
+{
+        "_id" : ObjectId("6228dab6bc8339c5bf616f3d"),
+        "Movie_name" : "Outrage",
+        "movie_genre" : "Crime|Drama|Thriller",
+        "Production_year" : "2003",
+        "budget" : 11000
+}
+{
+        "_id" : ObjectId("6228dab6bc8339c5bf616f3e"),
+        "Movie_name" : "Cold Comes the Night",
+        "movie_genre" : "Crime|Drama|Thriller",
+        "Production_year" : "2006",
+        "budget" : 13000
+}
+{
+        "_id" : ObjectId("6228dab6bc8339c5bf616f3f"),
+        "Movie_name" : "Four Stories of St. Julian ",
+        "movie_genre" : "Crime|Thriller",
+        "Production_year" : "1999",
+        "budget" : 14000
+}
+{
+        "_id" : ObjectId("6228dab6bc8339c5bf616f40"),
+        "Movie_name" : "G.I. Joe: The Rise of Cobra",
+        "movie_genre" : "Action|Adventure|Sci-Fi|Thriller",
+        "Production_year" : "1991",
+        "budget" : 12000
+}
+{
+        "_id" : ObjectId("6228dab6bc8339c5bf616f41"),
+        "Movie_name" : "Courier",
+        "movie_genre" : "Comedy|Drama|Romance",
+        "Production_year" : "2002",
+        "budget" : 19000
+}
+{
+        "_id" : ObjectId("6228dab6bc8339c5bf616f42"),
+        "Movie_name" : "Talk to Me",
+        "movie_genre" : "Drama",
+        "Production_year" : "1992",
+        "budget" : 18000
+}
+{
+        "_id" : ObjectId("6228dab6bc8339c5bf616f43"),
+        "Movie_name" : "Daar",
+        "movie_genre" : "Drama|Horror|Mystery|Romance|Thriller",
+        "Production_year" : "2012",
+        "budget" : 14000
+}
+{
+        "_id" : ObjectId("6228dab6bc8339c5bf616f44"),
+        "Movie_name" : "Final Cut, The",
+        "movie_genre" : "Sci-Fi|Thriller",
+        "Production_year" : "2003",
+        "budget" : 11000
+}
+{
+        "_id" : ObjectId("6228dab6bc8339c5bf616f45"),
+        "Movie_name" : "Sleepy Time Gal, The",
+        "movie_genre" : "Drama",
+        "Production_year" : "2006",
+        "budget" : 14000
+}
+{
+        "_id" : ObjectId("6228dab6bc8339c5bf616f46"),
+        "Movie_name" : "This Is Elvis",
+        "movie_genre" : "Documentary|Drama|Musical",
+        "Production_year" : "2019",
+        "budget" : 13000
+}
+{
+        "_id" : ObjectId("6228dab6bc8339c5bf616f47"),
+        "Movie_name" : "Harvest (Stadt Land Fluss)",
+        "movie_genre" : "Drama|Romance",
+        "Production_year" : "1995",
+        "budget" : 16000
+}
+{
+        "_id" : ObjectId("6228dab6bc8339c5bf616f48"),
+        "Movie_name" : "High Road to China",
+        "movie_genre" : "Adventure|Drama|Romance|War",
+        "Production_year" : "2015",
+        "budget" : 10000
+}
+{
+        "_id" : ObjectId("6228dab6bc8339c5bf616f49"),
+        "Movie_name" : "Match Point",
+        "movie_genre" : "Crime|Drama|Romance",
+        "Production_year" : "2009",
+        "budget" : 18000
+}
+{
+        "_id" : ObjectId("6228dab6bc8339c5bf616f4a"),
+        "Movie_name" : "Larceny, Inc.",
+        "movie_genre" : "Comedy|Crime|Drama",
+        "Production_year" : "2005",
+        "budget" : 13000
+}
+{
+        "_id" : ObjectId("6228dab6bc8339c5bf616f4b"),
+        "Movie_name" : "Little Italy",
+        "movie_genre" : "Action|Comedy",
+        "Production_year" : "2009",
+        "budget" : 20000
+}
+Type "it" for more
+> db.Movie.find({"Movie_name":{$eq : "Little Italy"}},{"Movie_name":1,"Production_year":1,"_id":0}).pretty()
+{ "Movie_name" : "Little Italy", "Production_year" : "2009" }
+> db.Movie.find({"Movie_name":{$ne : "Screwed"}},{"Movie_name":1,"Production_year":1,"_id":0}).pretty()
+{
+        "Movie_name" : "Pistol Opera (Pisutoru opera)",
+        "Production_year" : "2002"
+}
+{ "Movie_name" : "Slumber Party Massacre, The", "Production_year" : "2014" }
+{ "Movie_name" : "Big Easy, The", "Production_year" : "2015" }
+{ "Movie_name" : "Bachelorette", "Production_year" : "2003" }
+{
+        "Movie_name" : "Partners: The Movie II (Aibô: Gekijô-ban II)",
+        "Production_year" : "2008"
+}
+{ "Movie_name" : "Outrage", "Production_year" : "2003" }
+{ "Movie_name" : "Cold Comes the Night", "Production_year" : "2006" }
+{ "Movie_name" : "Four Stories of St. Julian ", "Production_year" : "1999" }
+{ "Movie_name" : "G.I. Joe: The Rise of Cobra", "Production_year" : "1991" }
+{ "Movie_name" : "Courier", "Production_year" : "2002" }
+{ "Movie_name" : "Talk to Me", "Production_year" : "1992" }
+{ "Movie_name" : "Daar", "Production_year" : "2012" }
+{ "Movie_name" : "Final Cut, The", "Production_year" : "2003" }
+{ "Movie_name" : "Sleepy Time Gal, The", "Production_year" : "2006" }
+{ "Movie_name" : "This Is Elvis", "Production_year" : "2019" }
+{ "Movie_name" : "Harvest (Stadt Land Fluss)", "Production_year" : "1995" }
+{ "Movie_name" : "High Road to China", "Production_year" : "2015" }
+{ "Movie_name" : "Match Point", "Production_year" : "2009" }
+{ "Movie_name" : "Larceny, Inc.", "Production_year" : "2005" }
+{ "Movie_name" : "Little Italy", "Production_year" : "2009" }
+Type "it" for more
+> db.Movie.find({"budget":{$gte : 15000}},{"Movie_name":1,"Production_year":1,"_id":0}).pretty()
+{
+        "Movie_name" : "Pistol Opera (Pisutoru opera)",
+        "Production_year" : "2002"
+}
+{ "Movie_name" : "Bachelorette", "Production_year" : "2003" }
+{ "Movie_name" : "Courier", "Production_year" : "2002" }
+{ "Movie_name" : "Talk to Me", "Production_year" : "1992" }
+{ "Movie_name" : "Harvest (Stadt Land Fluss)", "Production_year" : "1995" }
+{ "Movie_name" : "Match Point", "Production_year" : "2009" }
+{ "Movie_name" : "Little Italy", "Production_year" : "2009" }
+{ "Movie_name" : "Choking Man", "Production_year" : "2007" }
+{ "Movie_name" : "3 Ninjas Knuckle Up", "Production_year" : "1993" }
+{ "Movie_name" : "Killer Crocodile", "Production_year" : "1994" }
+{ "Movie_name" : "All Together, The", "Production_year" : "2004" }
+{ "Movie_name" : "Testament", "Production_year" : "1998" }
+{ "Movie_name" : "Dead Silence", "Production_year" : "2012" }
+{ "Movie_name" : "Waxwork", "Production_year" : "2007" }
+{ "Movie_name" : "Operator 13", "Production_year" : "2020" }
+{ "Movie_name" : "Red", "Production_year" : "2010" }
+{ "Movie_name" : "Three (Tri)", "Production_year" : "1993" }
+{ "Movie_name" : "Teachers", "Production_year" : "2003" }
+{
+        "Movie_name" : "Sex and Zen (Rou pu Tuan zhi tou Qing bao Jian)",
+        "Production_year" : "2006"
+}
+{
+        "Movie_name" : "Superman/Shazam!: The Return of Black Adam (DC Showcase Original Shorts Collection)",
+        "Production_year" : "2000"
+}
+Type "it" for more
+> db.Movie.find({"budget":{$lte : 15000}},{"Movie_name":1,"Production_year":1,"_id":0}).pretty()
+{ "Movie_name" : "Slumber Party Massacre, The", "Production_year" : "2014" }
+{ "Movie_name" : "Big Easy, The", "Production_year" : "2015" }
+{
+        "Movie_name" : "Partners: The Movie II (Aibô: Gekijô-ban II)",
+        "Production_year" : "2008"
+}
+{ "Movie_name" : "Outrage", "Production_year" : "2003" }
+{ "Movie_name" : "Cold Comes the Night", "Production_year" : "2006" }
+{ "Movie_name" : "Four Stories of St. Julian ", "Production_year" : "1999" }
+{ "Movie_name" : "G.I. Joe: The Rise of Cobra", "Production_year" : "1991" }
+{ "Movie_name" : "Daar", "Production_year" : "2012" }
+{ "Movie_name" : "Final Cut, The", "Production_year" : "2003" }
+{ "Movie_name" : "Sleepy Time Gal, The", "Production_year" : "2006" }
+{ "Movie_name" : "This Is Elvis", "Production_year" : "2019" }
+{ "Movie_name" : "High Road to China", "Production_year" : "2015" }
+{ "Movie_name" : "Larceny, Inc.", "Production_year" : "2005" }
+{ "Movie_name" : "Tanner Hall", "Production_year" : "2015" }
+{ "Movie_name" : "Bad Girl", "Production_year" : "1993" }
+{ "Movie_name" : "The Forest", "Production_year" : "2003" }
+{ "Movie_name" : "Superclásico", "Production_year" : "1995" }
+{ "Movie_name" : "Down Periscope", "Production_year" : "1992" }
+{
+        "Movie_name" : "Gold of Naples, The (L'oro di Napoli)",
+        "Production_year" : "2009"
+}
+{ "Movie_name" : "Viridiana", "Production_year" : "1997" }
+Type "it" for more
+> db.Movie.find({$and : [{"Production_year":{$gte : 2000}},{"budget":{$gt: 10000}}]},{"Movie_name":1,"Production_year":1,"_id":0}).pretty()
+> db.Movie.find({$and : [{"Production_year":{$gte : 2000}},{"budget":{$gt: 10000}}]},{"Movie_name":1,"Production_year":1,"_id":0}).pretty()
+> db.Movie.find({$and : [{"Production_year":{$eq : 2003}},{"budget":{$gt: 10000}}]},{"Movie_name":1,"Production_year":1,"_id":0}).pretty()
+> db.Movie.find({$and : [{"Production_year":{$eq : 2003}},{"budget":{$gt: 13000}}]},{"Movie_name":1,"Production_year":1,"_id":0}).pretty()
+> db.Movie.find({$and : [{"Production_year":{$gte : 1990}},{"budget":{$gt: 13000}}]},{"Movie_name":1,"Production_year":1,"_id":0}).pretty()
+>  db.Movie.find({$nor : [{"Production_year":{$gte : 2000}},{"budget":{$gt: 10000}}]},{"Movie_name":1,"Production_year":1,"_id":0}).pretty()
+{
+        "Movie_name" : "Partners: The Movie II (Aibô: Gekijô-ban II)",
+        "Production_year" : "2008"
+}
+{ "Movie_name" : "High Road to China", "Production_year" : "2015" }
+{ "Movie_name" : "Bad Girl", "Production_year" : "1993" }
+{ "Movie_name" : "The Forest", "Production_year" : "2003" }
+{ "Movie_name" : "Viridiana", "Production_year" : "1997" }
+{ "Movie_name" : "Maleficent", "Production_year" : "20008" }
+{
+        "Movie_name" : "Antonio das Mortes (O Dragão da Maldade contra o Santo Guerreiro)",
+        "Production_year" : "2017"
+}
+{ "Movie_name" : "Shanghai Dreams (Qing hong)", "Production_year" : "20008" }
+{
+        "Movie_name" : "I Became a Criminal (They Made Me a Fugitive)",
+        "Production_year" : "2002"
+}
+{ "Movie_name" : "Collision Earth", "Production_year" : "2006" }
+{
+        "Movie_name" : "News from a Personal War (Notícias de uma Guerra Particular)",
+        "Production_year" : "1998"
+}
+{ "Movie_name" : "Westworld", "Production_year" : "2010" }
+{ "Movie_name" : "Elephant Boy", "Production_year" : "2012" }
+{ "Movie_name" : "Powaqqatsi", "Production_year" : "2006" }
+{
+        "Movie_name" : "Little Soldier (Lille soldat)",
+        "Production_year" : "2000"
+}
+{
+        "Movie_name" : "Colossal Youth (Juventude Em Marcha)",
+        "Production_year" : "20008"
+}
+{ "Movie_name" : "There's Only One Sun", "Production_year" : "2001" }
+{ "Movie_name" : "Wake in Fright", "Production_year" : "2005" }
+{ "Movie_name" : "Surviving Picasso", "Production_year" : "2018" }
+{ "Movie_name" : "Bandslam", "Production_year" : "1995" }
+Type "it" for more
+> db.movie.find({$nor : [{"Production_year":2000},{"budget":10000}]},{"Movie_name":1,"Production_year":1,"_id":0}).pretty()
+> db.movie.find({$nor : [{"Production_year":2000},{"budget":10000}]},{"Movie_name":1,"Production_year":1,"_id":0}).pretty()
+> db.Movie.find({$and : [{"Production_year":{$gte : 2000}},{"budget":{$gt: 10000}}]},{"Movie_name":1,"Production_year":1,"_id":0}).pretty()
+> db.Movie.find({$and : [{"Production_year":{$gte : 2000}},{"Production_year":{$lte : 2010}}]},{"Movie_name":1,"Production_year":1,"_id":0}).pretty()
+> db.Movie.find().skip(10).limit(5).pretty()
+{
+        "_id" : ObjectId("6228dab6bc8339c5bf616f42"),
+        "Movie_name" : "Talk to Me",
+        "movie_genre" : "Drama",
+        "Production_year" : "1992",
+        "budget" : 18000
+}
+{
+        "_id" : ObjectId("6228dab6bc8339c5bf616f43"),
+        "Movie_name" : "Daar",
+        "movie_genre" : "Drama|Horror|Mystery|Romance|Thriller",
+        "Production_year" : "2012",
+        "budget" : 14000
+}
+{
+        "_id" : ObjectId("6228dab6bc8339c5bf616f44"),
+        "Movie_name" : "Final Cut, The",
+        "movie_genre" : "Sci-Fi|Thriller",
+        "Production_year" : "2003",
+        "budget" : 11000
+}
+{
+        "_id" : ObjectId("6228dab6bc8339c5bf616f45"),
+        "Movie_name" : "Sleepy Time Gal, The",
+        "movie_genre" : "Drama",
+        "Production_year" : "2006",
+        "budget" : 14000
+}
+{
+        "_id" : ObjectId("6228dab6bc8339c5bf616f46"),
+        "Movie_name" : "This Is Elvis",
+        "movie_genre" : "Documentary|Drama|Musical",
+        "Production_year" : "2019",
+        "budget" : 13000
+}
